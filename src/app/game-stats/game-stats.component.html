@@ -1,5 +1,17 @@
 <div class="row">
   <div class="col-sm-11">
+    <select #conferenceSelect (change)="onConferenceChange(conferenceSelect.value)">
+      <option></option>
+      <option [value]="conf" *ngFor="let conf of allConferences">
+        {{conf | conference}}
+      </option>
+    </select>
+    <select #divisionSelect (change)="onDivisionChange(divisionSelect.value)">
+      <option></option>
+      <option [value]="division.division" *ngFor="let division of divisions$ | async">
+        {{division.division}}
+      </option>
+    </select>
     <select #teamSelect>
       <option [value]="team.id" *ngFor="let team of teams$ | async">
         {{team.full_name}}

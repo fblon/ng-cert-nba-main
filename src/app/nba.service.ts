@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map, Observable} from 'rxjs';
 import { format, subDays } from 'date-fns';
-import {Game, Stats, Team} from './data.models';
+import {Conference, Division, Game, Stats, Team} from './data.models';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +56,21 @@ export class NbaService {
         stats.averagePointsScored = Math.round(stats.averagePointsScored / games.length);
         stats.averagePointsConceded = Math.round(stats.averagePointsConceded / games.length);
         return stats;
+  }
+
+  getAllConferences(): Conference[] {
+    return ['East', 'West'];
+  }
+
+  getAllDivisions(): Division[] {
+    return [
+      { conference: 'East', division: 'Atlantic' },
+      { conference: 'East', division: 'Central' },
+      { conference: 'East', division: 'Southeast' },
+      { conference: 'West', division: 'Northwest' },
+      { conference: 'West', division: 'Pacific' },
+      { conference: 'West', division: 'Southwest' },
+    ];
   }
 
   private getDaysQueryString(nbOfDays = 12): string {
