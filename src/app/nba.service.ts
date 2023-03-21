@@ -10,6 +10,9 @@ import {Conference, Division, Game, ServerTeam, Stats, Team} from './data.models
 export class NbaService {
 
   private _numberOfDays = 12;
+  public get numberOfDays() : number {
+    return this._numberOfDays;
+  }
   public set numberOfDays(value: number) {
     this._numberOfDays = value;
 
