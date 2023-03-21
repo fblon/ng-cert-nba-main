@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Conference, Division, Team} from '../data.models';
-import {BehaviorSubject, combineLatest, combineLatestWith, map, Observable, switchMap, tap} from 'rxjs';
+import {BehaviorSubject, combineLatestWith, map, Observable, tap} from 'rxjs';
 import {NbaService} from '../nba.service';
 
 @Component({

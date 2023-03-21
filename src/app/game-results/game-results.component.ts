@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {NbaService} from '../nba.service';
 import {Game, Team} from '../data.models';
-import {combineLatestWith, filter, map, Observable, Subject, switchMap} from 'rxjs';
+import {combineLatestWith, filter, map, Observable, switchMap} from 'rxjs';
 
 @Component({
   selector: 'app-game-results',
