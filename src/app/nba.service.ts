@@ -1,46 +1,54 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {map, Observable} from 'rxjs';
+import {BehaviorSubject, map, Observable} from 'rxjs';
 import { format, subDays } from 'date-fns';
-import {Conference, Division, Game, Stats, Team} from './data.models';
+import {Conference, Division, Game, ServerTeam, Stats, Team} from './data.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NbaService {
 
-  public numberOfDays = 12;
+  private _numberOfDays = 12;
+  public set numberOfDays(value: number) {
+    this._numberOfDays = value;
+
+    this.nextTrackedTeams(this.trackedTeams$.value);
+  }
 
   private headers = {'X-RapidAPI-Key': '2QMXSehDLSmshDmRQcKUIAiQjIZAp1UvKUrjsnewgqSP6F5oBX',
     'X-RapidAPI-Host': 'free-nba.p.rapidapi.com'};
   private API_URL = "https://free-nba.p.rapidapi.com";
-  trackedTeams: Team[] = [];
+  private trackedTeams$ = new BehaviorSubject<Team[]>([]);
 
   constructor(private http: HttpClient) { }
 
-  addTrackedTeam(team: Team): void {
-    this.trackedTeams.push(team);
+  addTrackedTeam(team: ServerTeam): void {
+    const trackedTeams = [...this.trackedTeams$.value, {...team, numberOfDays: this._numberOfDays}];
+    this.nextTrackedTeams(trackedTeams);
   }
 
   removeTrackedTeam(team: Team): void {
-    let index = this.trackedTeams.findIndex(t => t.id == team.id);
-    this.trackedTeams.splice(index, 1);
+    const trackedTeams = [...this.trackedTeams$.value];
+    let index = trackedTeams.findIndex(t => t.id == team.id);
+    trackedTeams.splice(index, 1);
+    this.nextTrackedTeams(trackedTeams);
   }
 
-  getTrackedTeams(): Team[] {
-    return this.trackedTeams;
+  getTrackedTeams(): Observable<Team[]> {
+    return this.trackedTeams$;
   }
 
   getAllTeams(): Observable<Team[]> {
-    return this.http.get<{data: Team[]}>(`${this.API_URL}/teams?page=0`,
+    return this.http.get<{data: ServerTeam[]}>(`${this.API_URL}/teams?page=0`,
       {headers: this.headers}).pipe(
-      map(res => res.data)
+      map(res => res.data.map(t => ({...t, numberOfDays: this._numberOfDays})))
     );
   }
 
   getLastResults(team: Team): Observable<Game[]> {
-    return this.http.get<{meta: any, data: Game[]}>(`${this.API_URL}/games?page=0${this.getDaysQueryString(this.numberOfDays)}`,
-      {headers: this.headers, params: {per_page: this.numberOfDays, "team_ids[]": ""+team.id}}).pipe(
+    return this.http.get<{meta: any, data: Game[]}>(`${this.API_URL}/games?page=0${this.getDaysQueryString(this._numberOfDays)}`,
+      {headers: this.headers, params: {per_page: this._numberOfDays, "team_ids[]": ""+team.id}}).pipe(
         map(res => res.data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
     );
   }
@@ -73,6 +81,10 @@ export class NbaService {
       { conference: 'West', division: 'Pacific' },
       { conference: 'West', division: 'Southwest' },
     ];
+  }
+
+  private nextTrackedTeams(trackedTeams: Team[]) {
+    this.trackedTeams$.next(trackedTeams.map(t => ({...t, numberOfDays: this.numberOfDays})));
   }
 
   private getDaysQueryString(nbOfDays: number): string {

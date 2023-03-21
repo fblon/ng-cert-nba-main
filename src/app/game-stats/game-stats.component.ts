@@ -13,6 +13,7 @@ export class GameStatsComponent {
   allConferences: Conference[]; 
   divisions$: Observable<Division[]>;
   teams$: Observable<Team[]>;
+  numbersOfDays = [6, 12 ,20];
 
   private allDivisions: Division[];
   private allTeams: Team[] = [];
@@ -42,7 +43,7 @@ export class GameStatsComponent {
       this.nbaService.addTrackedTeam(team);
   }
 
-  onConferenceChange(conference: string | undefined) {
+  changeConference(conference: string | undefined) {
     this.selectedConference$.next(conference);
 
     if (this.selectedDivision$.value !== conference) {
@@ -50,7 +51,15 @@ export class GameStatsComponent {
     }
   }
 
-  onDivisionChange(division: string | undefined) {
+  changeDivision(division: string | undefined) {
     this.selectedDivision$.next(this.allDivisions.find(d => d.division === division));
+  }
+
+  changeDays(value: string) {
+    this.nbaService.numberOfDays = +value;
+  }
+
+  teamTrackBy(_index: number, team: Team) : string {
+    return `${team.id}#${team.numberOfDays}`;
   }
 }

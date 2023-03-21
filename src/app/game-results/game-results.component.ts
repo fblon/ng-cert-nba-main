@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {NbaService} from '../nba.service';
 import {Game, Team} from '../data.models';
-import {Observable} from 'rxjs';
+import {combineLatestWith, filter, map, Observable, Subject, switchMap} from 'rxjs';
 
 @Component({
   selector: 'app-game-results',
@@ -11,15 +11,18 @@ import {Observable} from 'rxjs';
 })
 export class GameResultsComponent {
 
-  team?: Team;
-  games$?: Observable<Game[]>;
+  team$: Observable<Team>;
+  games$: Observable<Game[]>;
 
   constructor(private activatedRoute: ActivatedRoute, protected nbaService: NbaService) {
-    this.activatedRoute.paramMap.subscribe(paramMap => {
-        this.team = this.nbaService.getTrackedTeams().find(team => team.abbreviation === paramMap.get("teamAbbr"));
-        if (this.team)
-          this.games$ = this.nbaService.getLastResults(this.team);
-    })
+    this.team$ = this.activatedRoute.paramMap.pipe(
+      combineLatestWith(this.nbaService.getTrackedTeams()),
+      map(([paramMap, teams]) => teams.find(team => team.abbreviation === paramMap.get("teamAbbr"))),
+      filter(team => team != null),
+      map(team => team as Team));
+
+    this.games$ = this.team$.pipe(switchMap(team => this.nbaService.getLastResults(team)));
+
   }
 
 }

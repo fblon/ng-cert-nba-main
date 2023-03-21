@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-sm-6">
         <p>
-          Results of past {{nbaService.numberOfDays}} days:
+          Results of past {{team.numberOfDays}} days:
         </p>
         <div class="row">
           <mark class="tag" *ngFor="let result of stats.lastGames" [class]="result">{{result}}</mark>
