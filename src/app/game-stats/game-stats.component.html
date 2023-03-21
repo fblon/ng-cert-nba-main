@@ -18,6 +18,12 @@
       </option>
     </select>
     <button class="primary" (click)="trackTeam(teamSelect.value)">Track team</button>
+    <select #teamSelect>
+      <option [value]="team.id" *ngFor="let team of teams$ | async">
+        {{team.full_name}}
+      </option>
+    </select>
+    <div>days</div>
   </div>
 
 </div>

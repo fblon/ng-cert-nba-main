@@ -9,6 +9,8 @@ import {Conference, Division, Game, Stats, Team} from './data.models';
 })
 export class NbaService {
 
+  public numberOfDays = 12;
+
   private headers = {'X-RapidAPI-Key': '2QMXSehDLSmshDmRQcKUIAiQjIZAp1UvKUrjsnewgqSP6F5oBX',
     'X-RapidAPI-Host': 'free-nba.p.rapidapi.com'};
   private API_URL = "https://free-nba.p.rapidapi.com";
@@ -36,10 +38,10 @@ export class NbaService {
     );
   }
 
-  getLastResults(team: Team, numberOfDays = 12 ): Observable<Game[]> {
-    return this.http.get<{meta: any, data: Game[]}>(`${this.API_URL}/games?page=0${this.getDaysQueryString(numberOfDays)}`,
-      {headers: this.headers, params: {per_page: 12, "team_ids[]": ""+team.id}}).pipe(
-        map(res => res.data)
+  getLastResults(team: Team): Observable<Game[]> {
+    return this.http.get<{meta: any, data: Game[]}>(`${this.API_URL}/games?page=0${this.getDaysQueryString(this.numberOfDays)}`,
+      {headers: this.headers, params: {per_page: this.numberOfDays, "team_ids[]": ""+team.id}}).pipe(
+        map(res => res.data.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()))
     );
   }
 
@@ -73,7 +75,7 @@ export class NbaService {
     ];
   }
 
-  private getDaysQueryString(nbOfDays = 12): string {
+  private getDaysQueryString(nbOfDays: number): string {
     let qs = "";
     for (let i = 1;i < nbOfDays; i++) {
       let date = format(subDays(new Date(), i), "yyyy-MM-dd")

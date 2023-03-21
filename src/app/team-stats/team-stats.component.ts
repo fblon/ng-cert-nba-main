@@ -24,7 +24,7 @@ export class TeamStatsComponent implements OnInit {
   constructor(protected nbaService: NbaService) { }
 
   ngOnInit(): void {
-    this.games$ = this.nbaService.getLastResults(this.team, 12).pipe(
+    this.games$ = this.nbaService.getLastResults(this.team).pipe(
       tap(games =>  this.stats = this.nbaService.getStatsFromGames(games, this.team))
     )
   }

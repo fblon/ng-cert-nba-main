@@ -15,11 +15,11 @@
     <div class="row">
       <div class="col-sm-6">
         <p>
-          Results of past 12 days:
+          Results of past {{nbaService.numberOfDays}} days:
         </p>
-        <p>
+        <div class="row">
           <mark class="tag" *ngFor="let result of stats.lastGames" [class]="result">{{result}}</mark>
-        </p>
+        </div>
         <p>Avg pts scored: <strong>{{stats.averagePointsScored}}</strong> </p>
         <p>Avg pts conceded: <strong>{{stats.averagePointsConceded}}</strong> </p>
 

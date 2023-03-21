@@ -14,7 +14,7 @@ export class GameResultsComponent {
   team?: Team;
   games$?: Observable<Game[]>;
 
-  constructor(private activatedRoute: ActivatedRoute, private nbaService: NbaService) {
+  constructor(private activatedRoute: ActivatedRoute, protected nbaService: NbaService) {
     this.activatedRoute.paramMap.subscribe(paramMap => {
         this.team = this.nbaService.getTrackedTeams().find(team => team.abbreviation === paramMap.get("teamAbbr"));
         if (this.team)

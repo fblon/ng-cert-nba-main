@@ -17,8 +17,8 @@ mark.L {
 }
 
 mark {
-  width: 50px;
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .card {
