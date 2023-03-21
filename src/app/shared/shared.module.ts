@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConferencePipe } from './conference.pipe';
+import { DivisionPipe } from './division.pipe';
 
 
 
 @NgModule({
   declarations: [
-    ConferencePipe
+    ConferencePipe,
+    DivisionPipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ConferencePipe
+    ConferencePipe,
+    DivisionPipe
   ]
 })
 export class SharedModule { }

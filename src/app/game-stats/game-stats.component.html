@@ -9,7 +9,7 @@
     <select #divisionSelect (change)="onDivisionChange(divisionSelect.value)">
       <option></option>
       <option [value]="division.division" *ngFor="let division of divisions$ | async">
-        {{division.division}}
+        {{division.division | division}}
       </option>
     </select>
     <select #teamSelect>
