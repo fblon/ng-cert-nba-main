@@ -1,6 +1,13 @@
+<app-modal-dialog 
+  [title]="'Are you sure you want to remove this team?'" 
+  [buttons]="deleteChoices" 
+  (clickEvent)="confirmRemove($event)">
+
+</app-modal-dialog>
+
 <div class="card" *ngIf="games$ | async as games">
   <div>
-    <h3>{{team.full_name}} [{{team.abbreviation}}] <span (click)="nbaService.removeTrackedTeam(team)">&times;</span></h3>
+    <h3>{{team.full_name}} [{{team.abbreviation}}] <span (click)="remove()">&times;</span></h3>
     <h6>{{team.conference | conference}}</h6>
   </div>
   <hr/>

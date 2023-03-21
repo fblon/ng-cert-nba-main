@@ -1,0 +1,7 @@
+<dialog #dialog>
+  <div>{{title}}</div>
+  <br/>
+  <div>
+    <button *ngFor="let btn of buttons" (click)="clickOn(btn)">{{btn}}</button>
+  </div>
+</dialog>
