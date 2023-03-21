@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-cert-nba": {
+    "ng-cert-nba-main": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-cert-nba:build:production"
+              "browserTarget": "ng-cert-nba-main:build:production"
             },
             "development": {
-              "browserTarget": "ng-cert-nba:build:development"
+              "browserTarget": "ng-cert-nba-main:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-cert-nba:build"
+            "browserTarget": "ng-cert-nba-main:build"
           }
         },
         "test": {
