@@ -4,7 +4,7 @@ import {NbaService} from '../nba.service';
 import {Game, Stats, Team} from '../data.models';
 import { ModalDialogComponent } from '../shared/modal-dialog/modal-dialog.component';
 
-type deleteChoice = 'Yes' | 'No';
+type DeleteChoice = 'Yes' | 'No';
 
 @Component({
   selector: 'app-team-stats',
@@ -19,7 +19,7 @@ export class TeamStatsComponent implements OnInit {
   games$!: Observable<Game[]>;
   stats!: Stats;
 
-  deleteChoices: deleteChoice[] = [ 'No', 'Yes' ];
+  deleteChoices: DeleteChoice[] = [ 'No', 'Yes' ];
 
   constructor(protected nbaService: NbaService) { }
 
@@ -34,7 +34,7 @@ export class TeamStatsComponent implements OnInit {
   }
 
   confirmRemove(choice: string) {
-    if (choice as deleteChoice === 'Yes') {
+    if (choice as DeleteChoice === 'Yes') {
       this.nbaService.removeTrackedTeam(this.team);
     }
   }
