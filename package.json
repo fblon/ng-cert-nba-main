@@ -7,7 +7,10 @@
     "build": "ng build",
     "buildPages": "ng build --configuration=production --base-href=/ng-cert-nba-main/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "cypress": "npx cypress open",
+    "cypress:headless": "concurrently \"npm start\" \"npx cypress run\"",
+    "cypress:headed": "concurrently \"npm start\" \"npx cypress run --headed\""
   },
   "private": true,
   "dependencies": {
@@ -31,6 +34,7 @@
     "@angular/cli": "~15.0.2",
     "@angular/compiler-cli": "^15.0.2",
     "@types/jasmine": "~4.0.0",
+    "cypress": "^12.8.1",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
