@@ -1,0 +1,185 @@
+{
+  "data": [
+    {
+      "id": 858375,
+      "date": "2023-03-13T00:00:00.000Z",
+      "home_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "home_team_score": 123,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 24,
+        "abbreviation": "PHX",
+        "city": "Phoenix",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Phoenix Suns",
+        "name": "Suns"
+      },
+      "visitor_team_score": 112
+    },
+    {
+      "id": 858358,
+      "date": "2023-03-11T00:00:00.000Z",
+      "home_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "home_team_score": 125,
+      "period": 5,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 116
+    },
+    {
+      "id": 858392,
+      "date": "2023-03-15T00:00:00.000Z",
+      "home_team": {
+        "id": 13,
+        "abbreviation": "LAC",
+        "city": "LA",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "LA Clippers",
+        "name": "Clippers"
+      },
+      "home_team_score": 134,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "visitor_team_score": 126
+    },
+    {
+      "id": 858430,
+      "date": "2023-03-20T00:00:00.000Z",
+      "home_team": {
+        "id": 11,
+        "abbreviation": "HOU",
+        "city": "Houston",
+        "conference": "West",
+        "division": "Southwest",
+        "full_name": "Houston Rockets",
+        "name": "Rockets"
+      },
+      "home_team_score": 108,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "visitor_team_score": 121
+    },
+    {
+      "id": 858414,
+      "date": "2023-03-18T00:00:00.000Z",
+      "home_team": {
+        "id": 15,
+        "abbreviation": "MEM",
+        "city": "Memphis",
+        "conference": "West",
+        "division": "Southwest",
+        "full_name": "Memphis Grizzlies",
+        "name": "Grizzlies"
+      },
+      "home_team_score": 133,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "visitor_team_score": 119
+    },
+    {
+      "id": 858406,
+      "date": "2023-03-17T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 127,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "visitor_team_score": 119
+    }
+  ],
+  "meta": {
+    "total_pages": 1,
+    "current_page": 1,
+    "next_page": null,
+    "per_page": 12,
+    "total_count": 6
+  }
+}

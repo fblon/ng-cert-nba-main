@@ -124,7 +124,6 @@ describe('Home page', () => {
 
     cy.get('@teams').select(18);
     cy.get('@trackButton').click();
-    cy.wait('@apiGames');
 
     cy.get('@teams').select(9);
     cy.get('@trackButton').click();
@@ -135,6 +134,7 @@ describe('Home page', () => {
     cy.get('@teams').select(17);
     cy.get('@trackButton').click();
 
+    cy.wait('@apiGames');
     checkTrackedTeams(
       'Atlanta Hawks (Fake) [ATL] ×',
       'Brooklyn Nets [BKN] ×',
