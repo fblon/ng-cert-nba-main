@@ -105,25 +105,20 @@ describe('Home page', () => {
 
     checkTrackedTeams(atlantaHawks);
 
-    cy.get('@teams').select(brooklynNets.index);
-    cy.get('@trackButton').click();
+    trackTeam(brooklynNets);
     cy.wait('@apiGames');
 
     checkTrackedTeams(
       atlantaHawks,
       brooklynNets);
 
-    cy.get('@teams').select(newOrleansPelicans.index);
-    cy.get('@trackButton').click();
+    trackTeam(newOrleansPelicans);
 
-    cy.get('@teams').select(goldenStateWarriors.index);
-    cy.get('@trackButton').click();
+    trackTeam(goldenStateWarriors);
 
-    cy.get('@teams').select(milwaukeeBucks.index);
-    cy.get('@trackButton').click();
+    trackTeam(milwaukeeBucks);
 
-    cy.get('@teams').select(minnesotaTimberwolves.index);
-    cy.get('@trackButton').click();
+    trackTeam(minnesotaTimberwolves);
 
     cy.wait('@apiGames');
     checkTrackedTeams(
@@ -137,23 +132,17 @@ describe('Home page', () => {
 
   it('should be able to delete tracked teams', () => {
 
-    cy.get('@teams').select(atlantaHawks.index);
-    cy.get('@trackButton').click();
+    trackTeam(atlantaHawks);
 
-    cy.get('@teams').select(brooklynNets.index);
-    cy.get('@trackButton').click();
+    trackTeam(brooklynNets);
 
-    cy.get('@teams').select(goldenStateWarriors.index);
-    cy.get('@trackButton').click();
+    trackTeam(goldenStateWarriors);
 
-    cy.get('@teams').select(milwaukeeBucks.index);
-    cy.get('@trackButton').click();
+    trackTeam(milwaukeeBucks);
 
-    cy.get('@teams').select(minnesotaTimberwolves.index);
-    cy.get('@trackButton').click();
+    trackTeam(minnesotaTimberwolves);
 
-    cy.get('@teams').select(newOrleansPelicans.index);
-    cy.get('@trackButton').click();
+    trackTeam(newOrleansPelicans);
 
     cy.wait('@apiGames');
     checkTrackedTeams(
@@ -181,6 +170,7 @@ describe('Home page', () => {
   it('should enable filtering by division and conference', () => {
 
     checkTeamsSizeAndSelected(atlantaHawks);
+    checkDivisionsSizeAndSelected(atlantaHawks.division);
 
     changeDivision(atlantaHawks.division);
 
@@ -191,6 +181,25 @@ describe('Home page', () => {
 
     checkTeamsSizeAndSelected(atlantaHawks, 5);
     checkDivisionsSizeAndSelected(atlantaHawks.division, 4);
+
+    changeDivision(brooklynNets.division);
+    changeTeam(brooklynNets);
+
+    changeConference(goldenStateWarriors.conference);
+    changeDivision(goldenStateWarriors.division);
+    changeTeam(goldenStateWarriors);
+
+    changeConference(milwaukeeBucks.conference);
+    changeDivision(milwaukeeBucks.division);
+    changeTeam(milwaukeeBucks);
+
+    changeConference();
+    changeDivision();
+    changeTeam(minnesotaTimberwolves);
+
+    changeDivision(minnesotaTimberwolves.division);
+    changeConference(minnesotaTimberwolves.conference);
+    changeTeam(minnesotaTimberwolves);
   });
 
   function checkTeamsSizeAndSelected(expectedSelectedTeam: Team, expectedTeamLength: number = 30) {
@@ -206,7 +215,13 @@ describe('Home page', () => {
 
   }
 
-  function checkDivisionsSizeAndSelected(expectedSelectedDivision: Division, expectedDivisionLength: number = 7) {
+  function checkDivisionsSizeAndSelected(expectedSelectedDivision: Division | undefined, expectedDivisionLength: number = 7) {
+
+    if (!expectedSelectedDivision) {
+      cy.get('@divisions').first().should('be.empty');
+      return;
+    }
+
     cy.get('@divisions').contains(expectedSelectedDivision).should('exist');
 
     cy.get('@divisions').within(() => {
@@ -216,11 +231,28 @@ describe('Home page', () => {
     });
   }
 
-  function changeDivision(division: Division | undefined) {
+  function changeTeam(team: Team) {
+    cy.get('@teams').select(team.name);
+
+  }
+
+  function trackTeam(team: Team) {
+    changeTeam(team);
+    cy.get('@trackButton').click();
+  }
+
+  function changeDivision(division: Division | '' = '') {
+    if (!division) {
+      cy.get('@conferences').select('');
+    }
+
     cy.get('@divisions').select(division as string);
   }
 
-  function changeConference(conference: Conference | undefined) {
+  function changeConference(conference: Conference | '' = '') {
+    if (!conference) {
+      cy.get('@conferences').select('');
+    }
     cy.get('@conferences').select(conference as string);
   }
 
