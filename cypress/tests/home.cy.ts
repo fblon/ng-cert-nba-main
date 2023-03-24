@@ -32,7 +32,7 @@ describe('Home page', () => {
     cy.intercept(`${apiTeams}*`, { fixture: 'teams.json' }).as('apiTeams');
     cy.wait('@apiTeams');
 
-    cy.intercept('https://interstate21.com/*');
+    cy.intercept('**/*.png', { fixture: 'image.png' });
 
     cy.intercept(`${apiGames}*`, req => {
       // sample URL: https://free-nba.p.rapidapi.com/games?page=0&dates[]=2023-03-21&dates[]=2023-03-20&dates[]=2023-03-19&dates[]=2023-03-18&dates[]=2023-03-17&dates[]=2023-03-16&dates[]=2023-03-15&dates[]=2023-03-14&dates[]=2023-03-13&dates[]=2023-03-12&dates[]=2023-03-11&per_page=12&team_ids%5B%5D=1
