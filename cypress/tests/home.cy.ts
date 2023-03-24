@@ -83,15 +83,7 @@ describe('Home page', () => {
       })
     });
 
-    cy.get('@teams').within(() => {
-      cy.get('option').should($options => {
-        expect($options).to.have.length(30);
-
-        const firstTeamFullName = $options.first().text().trim();
-
-        expect(firstTeamFullName).to.equal('Atlanta Hawks (Fake)');
-      })
-    });
+    checkTeamsSizeAndSelected(atlantaHawks, 30);
 
     cy.get('@days').within(() => {
       cy.get('option').should($options => {
@@ -185,6 +177,52 @@ describe('Home page', () => {
 
     checkNoTrackedTeams();
   });
+
+  it('should enable filtering by division and conference', () => {
+
+    checkTeamsSizeAndSelected(atlantaHawks);
+
+    changeDivision(atlantaHawks.division);
+
+    checkTeamsSizeAndSelected(atlantaHawks, 5);
+    checkDivisionsSizeAndSelected(atlantaHawks.division);
+
+    changeConference(atlantaHawks.conference);
+
+    checkTeamsSizeAndSelected(atlantaHawks, 5);
+    checkDivisionsSizeAndSelected(atlantaHawks.division, 4);
+  });
+
+  function checkTeamsSizeAndSelected(expectedSelectedTeam: Team, expectedTeamLength: number = 30) {
+    cy.get('@teams').within(() => {
+      cy.get('option').should($options => {
+        expect($options).to.have.length(expectedTeamLength);
+
+        const firstTeamFullName = $options.first().text().trim();
+
+        expect(firstTeamFullName).to.equal(expectedSelectedTeam.name);
+      })
+    });
+
+  }
+
+  function checkDivisionsSizeAndSelected(expectedSelectedDivision: Division, expectedDivisionLength: number = 7) {
+    cy.get('@divisions').contains(expectedSelectedDivision).should('exist');
+
+    cy.get('@divisions').within(() => {
+      cy.get('option').should($options => {
+        expect($options).to.have.length(expectedDivisionLength);
+      })
+    });
+  }
+
+  function changeDivision(division: Division | undefined) {
+    cy.get('@divisions').select(division as string);
+  }
+
+  function changeConference(conference: Conference | undefined) {
+    cy.get('@conferences').select(conference as string);
+  }
 
   function checkNoTrackedTeams() {
     cy.get(cardTeamNameSelector).should('not.exist');

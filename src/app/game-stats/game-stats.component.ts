@@ -46,7 +46,7 @@ export class GameStatsComponent {
   changeConference(conference: string | undefined) {
     this.selectedConference$.next(conference);
 
-    if (this.selectedDivision$.value !== conference) {
+    if (this.selectedDivision$.value?.conference !== conference) {
       this.selectedDivision$.next(undefined);
     }
   }
