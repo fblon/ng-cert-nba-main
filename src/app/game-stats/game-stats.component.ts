@@ -58,4 +58,8 @@ export class GameStatsComponent {
   changeDays(value: string) {
     this.nbaService.numberOfDays = +value;
   }
+
+  teamTrackBy(_index: number, team: Team) : string {
+    return `${team.id}#${team.numberOfDays}`;
+  }
 }
