@@ -105,62 +105,24 @@ describe('Home page', () => {
 
     checkTrackedTeams(atlantaHawks);
 
-    trackTeam(brooklynNets);
-    cy.wait('@apiGames');
+    trackTeams(brooklynNets);
 
-    checkTrackedTeams(
-      atlantaHawks,
-      brooklynNets);
+    checkTrackedTeams(atlantaHawks, brooklynNets);
 
-    trackTeam(newOrleansPelicans);
+    trackTeams(newOrleansPelicans, goldenStateWarriors, milwaukeeBucks, minnesotaTimberwolves);
 
-    trackTeam(goldenStateWarriors);
-
-    trackTeam(milwaukeeBucks);
-
-    trackTeam(minnesotaTimberwolves);
-
-    cy.wait('@apiGames');
-    checkTrackedTeams(
-      atlantaHawks,
-      brooklynNets,
-      newOrleansPelicans,
-      goldenStateWarriors,
-      milwaukeeBucks,
-      minnesotaTimberwolves);
+    checkTrackedTeams(atlantaHawks, brooklynNets, newOrleansPelicans, goldenStateWarriors, milwaukeeBucks, minnesotaTimberwolves);
   });
 
   it('should be able to delete tracked teams', () => {
 
-    trackTeam(atlantaHawks);
+    trackTeams(...allTestTeams);
 
-    trackTeam(brooklynNets);
-
-    trackTeam(goldenStateWarriors);
-
-    trackTeam(milwaukeeBucks);
-
-    trackTeam(minnesotaTimberwolves);
-
-    trackTeam(newOrleansPelicans);
-
-    cy.wait('@apiGames');
-    checkTrackedTeams(
-      atlantaHawks,
-      brooklynNets,
-      goldenStateWarriors,
-      milwaukeeBucks,
-      minnesotaTimberwolves,
-      newOrleansPelicans);
+    checkTrackedTeams(...allTestTeams);
 
     deleteTrackedTeams(goldenStateWarriors);
 
-    checkTrackedTeams(
-      atlantaHawks,
-      brooklynNets,
-      milwaukeeBucks,
-      minnesotaTimberwolves,
-      newOrleansPelicans);
+    checkTrackedTeams(atlantaHawks, brooklynNets, milwaukeeBucks, minnesotaTimberwolves, newOrleansPelicans);
 
     deleteTrackedTeams(atlantaHawks, brooklynNets, milwaukeeBucks, minnesotaTimberwolves, newOrleansPelicans);
 
@@ -236,9 +198,13 @@ describe('Home page', () => {
 
   }
 
-  function trackTeam(team: Team) {
-    changeTeam(team);
-    cy.get('@trackButton').click();
+  function trackTeams(...teams: Team[]) {
+    teams.forEach(team => {
+      changeTeam(team);
+      cy.get('@trackButton').click();
+    });
+
+    cy.wait('@apiGames');
   }
 
   function changeDivision(division: Division | '' = '') {
