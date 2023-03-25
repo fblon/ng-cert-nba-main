@@ -1,8 +1,7 @@
 <app-modal-dialog 
-  [title]="'Are you sure you want to remove this team?'" 
   [buttons]="deleteChoices" 
   (clickEvent)="confirmRemove($event)">
-
+  <div>Are you sure you want to remove this team?</div>
 </app-modal-dialog>
 
 <div class="card" *ngIf="games$ | async as games">

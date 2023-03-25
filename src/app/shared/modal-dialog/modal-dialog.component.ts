@@ -6,7 +6,6 @@ import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@
   styleUrls: ['./modal-dialog.component.css']
 })
 export class ModalDialogComponent {
-  @Input() title!: string;
   @Input() buttons: string[] = ['OK'];
   @Output() clickEvent = new EventEmitter<string>()
 

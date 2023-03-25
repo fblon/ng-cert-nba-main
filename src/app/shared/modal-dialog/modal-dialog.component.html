@@ -1,6 +1,6 @@
 <dialog #dialog>
   <br/>
-  <div>{{title}}</div>
+  <ng-content></ng-content>
   <p></p>
   <div>
     <button *ngFor="let btn of buttons" (click)="clickOn(btn)">{{btn}}</button>
