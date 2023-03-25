@@ -14,22 +14,19 @@ export interface Game {
 
 export type Conference = 'East' | 'West';
 export interface Division {
-  readonly conference: Conference;
-  readonly division: string;
+  conference: Conference;
+  division: string;
 }
 
 export interface Team {
-  readonly id: number;
-  readonly abbreviation: string;
-  readonly city: string;
-  readonly conference: Conference;
-  readonly division: string;
-  readonly full_name: string;
-  readonly name: string;
-  readonly numberOfDays: number;
+  id: number;
+  abbreviation: string;
+  city: string;
+  conference: Conference;
+  division: string;
+  full_name: string;
+  name: string;
 }
-
-export type ServerTeam = Omit<Team, 'numberOfDays'>;
 
 export interface Stats {
   wins: number;

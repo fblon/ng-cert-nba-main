@@ -28,7 +28,7 @@
 
 </div>
 <div class="row">
-  <app-team-stats class="col-sm-4" *ngFor="let team of nbaService.getTrackedTeams() | async; trackBy: teamTrackBy" [team]="team">
+  <app-team-stats class="col-sm-4" *ngFor="let team of nbaService.getTrackedTeams() | async" [team]="team">
 
   </app-team-stats>
 </div>

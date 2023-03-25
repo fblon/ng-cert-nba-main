@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, map, Observable} from 'rxjs';
 import { format, subDays } from 'date-fns';
-import {Conference, Division, Game, ServerTeam, Stats, Team} from './data.models';
+import {Conference, Division, Game, Stats, Team} from './data.models';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class NbaService {
 
   constructor(private http: HttpClient) { }
 
-  addTrackedTeam(team: ServerTeam): void {
+  addTrackedTeam(team: Team): void {
     const trackedTeams = [...this.trackedTeams$.value, {...team, numberOfDays: this._numberOfDays}];
     this.nextTrackedTeams(trackedTeams);
   }
@@ -43,7 +43,7 @@ export class NbaService {
   }
 
   getAllTeams(): Observable<Team[]> {
-    return this.http.get<{data: ServerTeam[]}>(`${this.API_URL}/teams?page=0`,
+    return this.http.get<{data: Team[]}>(`${this.API_URL}/teams?page=0`,
       {headers: this.headers}).pipe(
       map(res => res.data.map(t => ({...t, numberOfDays: this._numberOfDays})))
     );
@@ -87,7 +87,7 @@ export class NbaService {
   }
 
   private nextTrackedTeams(trackedTeams: Team[]) {
-    this.trackedTeams$.next(trackedTeams.map(t => ({...t, numberOfDays: this.numberOfDays})));
+    this.trackedTeams$.next(trackedTeams.map(t => ({...t })));
   }
 
   private getDaysQueryString(nbOfDays: number): string {
