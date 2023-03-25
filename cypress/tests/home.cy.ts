@@ -86,7 +86,7 @@ describe('Home page', () => {
       })
     });
 
-    checkTeamsSizeAndSelected(atlantaHawks, 30);
+    checkTeamsSizeAndSelected(30, atlantaHawks);
 
     cy.get('@days').within(() => {
       cy.get('option').should($options => {
@@ -134,32 +134,36 @@ describe('Home page', () => {
 
   it('should enable filtering by division and conference', () => {
 
-    checkTeamsSizeAndSelected(atlantaHawks);
-    checkDivisionsSizeAndSelected(atlantaHawks.division);
+    checkTeamsSizeAndSelected(30, atlantaHawks);
+    checkDivisionsSizeAndSelected(7, undefined);
 
     changeDivision(atlantaHawks.division);
 
-    checkTeamsSizeAndSelected(atlantaHawks, 5);
-    checkDivisionsSizeAndSelected(atlantaHawks.division);
+    checkTeamsSizeAndSelected(5, atlantaHawks);
+    checkDivisionsSizeAndSelected(7, atlantaHawks.division);
 
     changeConference(atlantaHawks.conference);
 
-    checkTeamsSizeAndSelected(atlantaHawks, 5);
-    checkDivisionsSizeAndSelected(atlantaHawks.division, 4);
+    checkTeamsSizeAndSelected(5, atlantaHawks);
+    checkDivisionsSizeAndSelected(4, atlantaHawks.division);
 
     changeDivision(brooklynNets.division);
     changeTeam(brooklynNets);
 
     changeConference(goldenStateWarriors.conference);
-    changeDivision(goldenStateWarriors.division);
+    checkDivisionsSizeAndSelected(4, undefined);
+    checkTeamsSize(15);
     changeTeam(goldenStateWarriors);
 
     changeConference(milwaukeeBucks.conference);
     changeDivision(milwaukeeBucks.division);
     changeTeam(milwaukeeBucks);
 
-    changeConference();
-    changeDivision();
+    changeConference(undefined);
+    checkDivisionsSizeAndSelected(7, milwaukeeBucks.division);
+    checkTeamsSizeAndSelected(30, milwaukeeBucks);
+
+    changeDivision(undefined);
     changeTeam(minnesotaTimberwolves);
 
     changeDivision(minnesotaTimberwolves.division);
@@ -189,19 +193,16 @@ describe('Home page', () => {
 
   }
 
-  function changeDivision(division: Division | '' = '') {
-    if (!division) {
-      cy.get('@conferences').select('');
-    }
+  function changeDivision(division: Division | undefined) {
+    const text = division ? division as string : '';
 
-    cy.get('@divisions').select(division as string);
+    cy.get('@divisions').select(text);
   }
 
-  function changeConference(conference: Conference | '' = '') {
-    if (!conference) {
-      cy.get('@conferences').select('');
-    }
-    cy.get('@conferences').select(conference as string);
+  function changeConference(conference: Conference | undefined) {
+    const text = conference ? conference as string : '';
+
+    cy.get('@conferences').select(text);
   }
 
   function changeNumberOfDays(days: Days) {
@@ -245,27 +246,28 @@ describe('Home page', () => {
     });
   }
 
-  function checkTeamsSizeAndSelected(expectedSelectedTeam: Team, expectedTeamLength: number = 30) {
+  function checkTeamsSizeAndSelected(expectedTeamLength: number, expectedSelectedTeam: Team) {
+    checkTeamsSize(expectedTeamLength);
+
+    cy.get('@teams').find('option:selected').should('contain.text', expectedSelectedTeam.name);
+  }
+
+  function checkTeamsSize(expectedTeamLength: number) {
     cy.get('@teams').within(() => {
       cy.get('option').should($options => {
         expect($options).to.have.length(expectedTeamLength);
-
-        const firstTeamFullName = $options.first().text().trim();
-
-        expect(firstTeamFullName).to.equal(expectedSelectedTeam.name);
       })
     });
-
   }
 
-  function checkDivisionsSizeAndSelected(expectedSelectedDivision: Division | undefined, expectedDivisionLength: number = 7) {
+  function checkDivisionsSizeAndSelected(expectedDivisionLength: number, expectedSelectedDivision: Division | undefined) {
 
     if (!expectedSelectedDivision) {
-      cy.get('@divisions').first().should('be.empty');
-      return;
+      cy.get('@divisions').find('option:selected').should('have.text', '');
     }
-
-    cy.get('@divisions').contains(expectedSelectedDivision).should('exist');
+    else {
+      cy.get('@divisions').find('option:selected').should('contain.text', expectedSelectedDivision);
+    }
 
     cy.get('@divisions').within(() => {
       cy.get('option').should($options => {
@@ -283,7 +285,7 @@ describe('Home page', () => {
     });
   }
 
-  function getUrlParameterValue(url: string, parameter: string) : string {
+  function getUrlParameterValue(url: string, parameter: string): string {
     const paramAndValue = url.split('&').filter(o => o.includes(parameter))[0];
     return paramAndValue.split('=')[1];
   }
