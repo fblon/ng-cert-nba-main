@@ -1,0 +1,359 @@
+{
+  "data": [
+    {
+      "id": 858366,
+      "date": "2023-03-11T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 125,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 2,
+        "abbreviation": "BOS",
+        "city": "Boston",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Boston Celtics",
+        "name": "Celtics"
+      },
+      "visitor_team_score": 134
+    },
+    {
+      "id": 858377,
+      "date": "2023-03-13T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 115,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 18,
+        "abbreviation": "MIN",
+        "city": "Minnesota",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Minnesota Timberwolves",
+        "name": "Timberwolves"
+      },
+      "visitor_team_score": 136
+    },
+    {
+      "id": 858406,
+      "date": "2023-03-17T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 127,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "visitor_team_score": 119
+    },
+    {
+      "id": 858417,
+      "date": "2023-03-19T00:00:00.000Z",
+      "home_team": {
+        "id": 27,
+        "abbreviation": "SAS",
+        "city": "San Antonio",
+        "conference": "West",
+        "division": "Southwest",
+        "full_name": "San Antonio Spurs",
+        "name": "Spurs"
+      },
+      "home_team_score": 126,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "visitor_team_score": 118
+    },
+    {
+      "id": 858433,
+      "date": "2023-03-21T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 129,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 9,
+        "abbreviation": "DET",
+        "city": "Detroit",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Detroit Pistons",
+        "name": "Pistons"
+      },
+      "visitor_team_score": 107
+    },
+    {
+      "id": 858366,
+      "date": "2023-03-11T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 125,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 2,
+        "abbreviation": "BOS",
+        "city": "Boston",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Boston Celtics",
+        "name": "Celtics"
+      },
+      "visitor_team_score": 134
+    },
+    {
+      "id": 858377,
+      "date": "2023-03-13T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 115,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 18,
+        "abbreviation": "MIN",
+        "city": "Minnesota",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Minnesota Timberwolves",
+        "name": "Timberwolves"
+      },
+      "visitor_team_score": 136
+    },
+    {
+      "id": 858406,
+      "date": "2023-03-17T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 127,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "visitor_team_score": 119
+    },
+    {
+      "id": 858417,
+      "date": "2023-03-19T00:00:00.000Z",
+      "home_team": {
+        "id": 27,
+        "abbreviation": "SAS",
+        "city": "San Antonio",
+        "conference": "West",
+        "division": "Southwest",
+        "full_name": "San Antonio Spurs",
+        "name": "Spurs"
+      },
+      "home_team_score": 126,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "visitor_team_score": 118
+    },
+    {
+      "id": 858433,
+      "date": "2023-03-21T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 129,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 9,
+        "abbreviation": "DET",
+        "city": "Detroit",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Detroit Pistons",
+        "name": "Pistons"
+      },
+      "visitor_team_score": 107
+    },
+    {
+      "id": 858366,
+      "date": "2023-03-11T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 125,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 2,
+        "abbreviation": "BOS",
+        "city": "Boston",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Boston Celtics",
+        "name": "Celtics"
+      },
+      "visitor_team_score": 134
+    },
+    {
+      "id": 858377,
+      "date": "2023-03-13T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 115,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 18,
+        "abbreviation": "MIN",
+        "city": "Minnesota",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Minnesota Timberwolves",
+        "name": "Timberwolves"
+      },
+      "visitor_team_score": 136
+    }
+  ],
+  "meta": {
+    "total_pages": 1,
+    "current_page": 1,
+    "next_page": null,
+    "per_page": 12,
+    "total_count": 12
+  }
+}

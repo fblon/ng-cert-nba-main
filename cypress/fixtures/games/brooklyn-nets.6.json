@@ -144,13 +144,42 @@
         "name": "Cavaliers"
       },
       "visitor_team_score": 115
+    },
+    {
+      "id": 858369,
+      "date": "2023-03-12T00:00:00.000Z",
+      "home_team": {
+        "id": 8,
+        "abbreviation": "DEN",
+        "city": "Denver",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Denver Nuggets",
+        "name": "Nuggets"
+      },
+      "home_team_score": 120,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "visitor_team_score": 122
     }
   ],
   "meta": {
     "total_pages": 1,
     "current_page": 1,
     "next_page": null,
-    "per_page": 12,
-    "total_count": 5
+    "per_page": 6,
+    "total_count": 6
   }
 }

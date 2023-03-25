@@ -1,0 +1,359 @@
+{
+  "data": [
+    {
+      "id": 858369,
+      "date": "2023-03-12T00:00:00.000Z",
+      "home_team": {
+        "id": 8,
+        "abbreviation": "DEN",
+        "city": "Denver",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Denver Nuggets",
+        "name": "Nuggets"
+      },
+      "home_team_score": 120,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "visitor_team_score": 122
+    },
+    {
+      "id": 858381,
+      "date": "2023-03-14T00:00:00.000Z",
+      "home_team": {
+        "id": 21,
+        "abbreviation": "OKC",
+        "city": "Oklahoma City",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Oklahoma City Thunder",
+        "name": "Thunder"
+      },
+      "home_team_score": 121,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "visitor_team_score": 107
+    },
+    {
+      "id": 858400,
+      "date": "2023-03-16T00:00:00.000Z",
+      "home_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "home_team_score": 96,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 26,
+        "abbreviation": "SAC",
+        "city": "Sacramento",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Sacramento Kings",
+        "name": "Kings"
+      },
+      "visitor_team_score": 101
+    },
+    {
+      "id": 858424,
+      "date": "2023-03-19T00:00:00.000Z",
+      "home_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "home_team_score": 102,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 8,
+        "abbreviation": "DEN",
+        "city": "Denver",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Denver Nuggets",
+        "name": "Nuggets"
+      },
+      "visitor_team_score": 108
+    },
+    {
+      "id": 858431,
+      "date": "2023-03-21T00:00:00.000Z",
+      "home_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "home_team_score": 109,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 6,
+        "abbreviation": "CLE",
+        "city": "Cleveland",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Cleveland Cavaliers",
+        "name": "Cavaliers"
+      },
+      "visitor_team_score": 115
+    },
+    {
+      "id": 858369,
+      "date": "2023-03-12T00:00:00.000Z",
+      "home_team": {
+        "id": 8,
+        "abbreviation": "DEN",
+        "city": "Denver",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Denver Nuggets",
+        "name": "Nuggets"
+      },
+      "home_team_score": 120,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "visitor_team_score": 122
+    },
+    {
+      "id": 858381,
+      "date": "2023-03-14T00:00:00.000Z",
+      "home_team": {
+        "id": 21,
+        "abbreviation": "OKC",
+        "city": "Oklahoma City",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Oklahoma City Thunder",
+        "name": "Thunder"
+      },
+      "home_team_score": 121,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "visitor_team_score": 107
+    },
+    {
+      "id": 858400,
+      "date": "2023-03-16T00:00:00.000Z",
+      "home_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "home_team_score": 96,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 26,
+        "abbreviation": "SAC",
+        "city": "Sacramento",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Sacramento Kings",
+        "name": "Kings"
+      },
+      "visitor_team_score": 101
+    },
+    {
+      "id": 858424,
+      "date": "2023-03-19T00:00:00.000Z",
+      "home_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "home_team_score": 102,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 8,
+        "abbreviation": "DEN",
+        "city": "Denver",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Denver Nuggets",
+        "name": "Nuggets"
+      },
+      "visitor_team_score": 108
+    },
+    {
+      "id": 858431,
+      "date": "2023-03-21T00:00:00.000Z",
+      "home_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "home_team_score": 109,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 6,
+        "abbreviation": "CLE",
+        "city": "Cleveland",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Cleveland Cavaliers",
+        "name": "Cavaliers"
+      },
+      "visitor_team_score": 115
+    },
+    {
+      "id": 858369,
+      "date": "2023-03-12T00:00:00.000Z",
+      "home_team": {
+        "id": 8,
+        "abbreviation": "DEN",
+        "city": "Denver",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Denver Nuggets",
+        "name": "Nuggets"
+      },
+      "home_team_score": 120,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "visitor_team_score": 122
+    },
+    {
+      "id": 858381,
+      "date": "2023-03-14T00:00:00.000Z",
+      "home_team": {
+        "id": 21,
+        "abbreviation": "OKC",
+        "city": "Oklahoma City",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Oklahoma City Thunder",
+        "name": "Thunder"
+      },
+      "home_team_score": 121,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 3,
+        "abbreviation": "BKN",
+        "city": "Brooklyn",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Brooklyn Nets",
+        "name": "Nets"
+      },
+      "visitor_team_score": 107
+    }
+  ],
+  "meta": {
+    "total_pages": 1,
+    "current_page": 1,
+    "next_page": null,
+    "per_page": 12,
+    "total_count": 12
+  }
+}

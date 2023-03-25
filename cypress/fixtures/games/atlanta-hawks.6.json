@@ -144,13 +144,42 @@
         "name": "Pistons"
       },
       "visitor_team_score": 107
+    },
+    {
+      "id": 858366,
+      "date": "2023-03-11T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 125,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 2,
+        "abbreviation": "BOS",
+        "city": "Boston",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Boston Celtics",
+        "name": "Celtics"
+      },
+      "visitor_team_score": 134
     }
   ],
   "meta": {
     "total_pages": 1,
     "current_page": 1,
     "next_page": null,
-    "per_page": 12,
-    "total_count": 5
+    "per_page": 6,
+    "total_count": 6
   }
 }

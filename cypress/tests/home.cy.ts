@@ -15,14 +15,16 @@ const apiTeams = `${Cypress.env("apiUrl")}/teams`;
 const apiGames = `${Cypress.env("apiUrl")}/games`;
 const cardTeamNameSelector = 'h3'
 
-const atlantaHawks: Team = { index: 0, reqId: 1, abbreviation: 'ATL', name: 'Atlanta Hawks (Fake)', fixture: 'atlanta-hawks.json', division: 'Southeast', conference: 'East' };
-const brooklynNets: Team = { index: 2, reqId: 3, abbreviation: 'BKN', name: 'Brooklyn Nets', fixture: 'brooklyn-nets.json', division: 'Atlantic', conference: 'East' };
-const goldenStateWarriors: Team = { index: 9, reqId: 10, abbreviation: 'GSW', name: 'Golden State Warriors', fixture: 'golden-state-warriors.json', division: 'Pacific', conference: 'West' };
-const milwaukeeBucks: Team = { index: 16, reqId: 17, abbreviation: 'MIL', name: 'Milwaukee Bucks', fixture: 'milwaukee-bucks.json', division: 'Central', conference: 'East' };
-const minnesotaTimberwolves: Team = { index: 17, reqId: 18, abbreviation: 'MIN', name: 'Minnesota Timberwolves', fixture: 'minnesota-timberwolves.json', division: 'Northwest', conference: 'West' };
-const newOrleansPelicans: Team = { index: 18, reqId: 19, abbreviation: 'NOP', name: 'New Orleans Pelicans', fixture: 'new-orleans-pelicans.json', division: 'Southwest', conference: 'West' };
+const atlantaHawks: Team = { index: 0, reqId: 1, abbreviation: 'ATL', name: 'Atlanta Hawks (Fake)', fixture: 'atlanta-hawks', division: 'Southeast', conference: 'East' };
+const brooklynNets: Team = { index: 2, reqId: 3, abbreviation: 'BKN', name: 'Brooklyn Nets', fixture: 'brooklyn-nets', division: 'Atlantic', conference: 'East' };
+const goldenStateWarriors: Team = { index: 9, reqId: 10, abbreviation: 'GSW', name: 'Golden State Warriors', fixture: 'golden-state-warriors', division: 'Pacific', conference: 'West' };
+const milwaukeeBucks: Team = { index: 16, reqId: 17, abbreviation: 'MIL', name: 'Milwaukee Bucks', fixture: 'milwaukee-bucks', division: 'Central', conference: 'East' };
+const minnesotaTimberwolves: Team = { index: 17, reqId: 18, abbreviation: 'MIN', name: 'Minnesota Timberwolves', fixture: 'minnesota-timberwolves', division: 'Northwest', conference: 'West' };
+const newOrleansPelicans: Team = { index: 18, reqId: 19, abbreviation: 'NOP', name: 'New Orleans Pelicans', fixture: 'new-orleans-pelicans', division: 'Southwest', conference: 'West' };
 
 const allTestTeams = [atlantaHawks, brooklynNets, goldenStateWarriors, milwaukeeBucks, minnesotaTimberwolves, newOrleansPelicans];
+
+type Days = 6 | 12 | 20;
 
 describe('Home page', () => {
   beforeEach(() => {
@@ -37,11 +39,12 @@ describe('Home page', () => {
     cy.intercept(`${apiGames}*`, req => {
       // sample URL: https://free-nba.p.rapidapi.com/games?page=0&dates[]=2023-03-21&dates[]=2023-03-20&dates[]=2023-03-19&dates[]=2023-03-18&dates[]=2023-03-17&dates[]=2023-03-16&dates[]=2023-03-15&dates[]=2023-03-14&dates[]=2023-03-13&dates[]=2023-03-12&dates[]=2023-03-11&per_page=12&team_ids%5B%5D=1
       // Id is to be accessed at last parameter of url after equal sign : team_ids%5B%5D=1
-      const reqId = +(req.url.split('=').pop() as string);
+      const reqId = +(getUrlParameterValue(req.url, 'team_ids'));
+      const numberOfDays = +(getUrlParameterValue(req.url, 'per_page'));
       const team = allTestTeams.find(o => o.reqId === reqId);
-      const fixture = team ? team.fixture : 'unknown.json';
+      const fixture = team ? team.fixture : 'unknown';
 
-      req.reply({ fixture: `games/${fixture}` });
+      req.reply({ fixture: `games/${fixture}.${numberOfDays}.json` });
     }).as('apiGames');
 
     cy.get('select').eq(0).as('conferences');
@@ -164,6 +167,84 @@ describe('Home page', () => {
     changeTeam(minnesotaTimberwolves);
   });
 
+  it.only('should keep tracking time align with number of days', () => {
+
+    trackTeams(atlantaHawks);
+    checkStats(12, atlantaHawks);
+
+    changeNumberOfDays(20);
+
+    trackTeams(brooklynNets);
+    checkStats(20, atlantaHawks, brooklynNets);
+
+    changeNumberOfDays(6);
+    checkStats(6, atlantaHawks, brooklynNets);
+
+    trackTeams(minnesotaTimberwolves);
+    checkStats(6, atlantaHawks, brooklynNets, minnesotaTimberwolves);
+  })
+
+  function changeTeam(team: Team) {
+    cy.get('@teams').select(team.name);
+
+  }
+
+  function changeDivision(division: Division | '' = '') {
+    if (!division) {
+      cy.get('@conferences').select('');
+    }
+
+    cy.get('@divisions').select(division as string);
+  }
+
+  function changeConference(conference: Conference | '' = '') {
+    if (!conference) {
+      cy.get('@conferences').select('');
+    }
+    cy.get('@conferences').select(conference as string);
+  }
+
+  function changeNumberOfDays(days: Days) {
+    cy.get('@days').select(days.toString());
+  }
+
+  function trackTeams(...teams: Team[]) {
+    teams.forEach(team => {
+      changeTeam(team);
+      cy.get('@trackButton').click();
+    });
+
+    cy.wait('@apiGames');
+  }
+
+  function deleteTrackedTeams(...teams: Team[]) {
+    teams.forEach(team => {
+
+      cy.get(cardTeamNameSelector).contains(team.name).first().within(() => {
+        cy.get('span').click();
+
+      });
+
+      cy.get('dialog:visible').within(() => {
+        cy.get('button').contains('Yes').click();
+      });
+    });
+  }
+
+  function checkNoTrackedTeams() {
+    cy.get(cardTeamNameSelector).should('not.exist');
+  }
+
+  function checkTrackedTeams(...teams: Team[]) {
+    const expectedTeams = teams.map(t => `${t.name} [${t.abbreviation}] ×`);
+
+    cy.get(cardTeamNameSelector).should($els => {
+      const teams = $els.map((i, el) => Cypress.$(el).text().trim());
+
+      expect(teams.get()).to.deep.equal(expectedTeams);
+    });
+  }
+
   function checkTeamsSizeAndSelected(expectedSelectedTeam: Team, expectedTeamLength: number = 30) {
     cy.get('@teams').within(() => {
       cy.get('option').should($options => {
@@ -193,61 +274,18 @@ describe('Home page', () => {
     });
   }
 
-  function changeTeam(team: Team) {
-    cy.get('@teams').select(team.name);
-
-  }
-
-  function trackTeams(...teams: Team[]) {
+  function checkStats(expectedNumberOdDays: Days, ...teams: Team[]) {
     teams.forEach(team => {
-      changeTeam(team);
-      cy.get('@trackButton').click();
-    });
-
-    cy.wait('@apiGames');
-  }
-
-  function changeDivision(division: Division | '' = '') {
-    if (!division) {
-      cy.get('@conferences').select('');
-    }
-
-    cy.get('@divisions').select(division as string);
-  }
-
-  function changeConference(conference: Conference | '' = '') {
-    if (!conference) {
-      cy.get('@conferences').select('');
-    }
-    cy.get('@conferences').select(conference as string);
-  }
-
-  function checkNoTrackedTeams() {
-    cy.get(cardTeamNameSelector).should('not.exist');
-  }
-
-  function checkTrackedTeams(...teams: Team[]) {
-    const expectedTeams = teams.map(t => `${t.name} [${t.abbreviation}] ×`);
-
-    cy.get(cardTeamNameSelector).should($els => {
-      const teams = $els.map((i, el) => Cypress.$(el).text().trim());
-
-      expect(teams.get()).to.deep.equal(expectedTeams);
+      cy.get('.card').and('contain', team.name).first().within(() => {
+        cy.contains(`Results of past ${expectedNumberOdDays} days:`);
+        cy.get('mark').should('have.length', expectedNumberOdDays);
+      })
     });
   }
 
-  function deleteTrackedTeams(...teams: Team[]) {
-    teams.forEach(team => {
-
-      cy.get(cardTeamNameSelector).contains(team.name).first().within(() => {
-        cy.get('span').click();
-
-      });
-
-      cy.get('dialog:visible').within(() => {
-        cy.get('button').contains('Yes').click();
-      });
-    });
+  function getUrlParameterValue(url: string, parameter: string) : string {
+    const paramAndValue = url.split('&').filter(o => o.includes(parameter))[0];
+    return paramAndValue.split('=')[1];
   }
 })
 

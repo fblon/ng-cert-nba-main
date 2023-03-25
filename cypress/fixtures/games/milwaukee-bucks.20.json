@@ -1,0 +1,591 @@
+{
+  "data": [
+    {
+      "id": 858358,
+      "date": "2023-03-11T00:00:00.000Z",
+      "home_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "home_team_score": 125,
+      "period": 5,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 116
+    },
+    {
+      "id": 858380,
+      "date": "2023-03-13T00:00:00.000Z",
+      "home_team": {
+        "id": 26,
+        "abbreviation": "SAC",
+        "city": "Sacramento",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Sacramento Kings",
+        "name": "Kings"
+      },
+      "home_team_score": 124,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 133
+    },
+    {
+      "id": 858387,
+      "date": "2023-03-14T00:00:00.000Z",
+      "home_team": {
+        "id": 24,
+        "abbreviation": "PHX",
+        "city": "Phoenix",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Phoenix Suns",
+        "name": "Suns"
+      },
+      "home_team_score": 104,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 116
+    },
+    {
+      "id": 858396,
+      "date": "2023-03-16T00:00:00.000Z",
+      "home_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "home_team_score": 123,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 12,
+        "abbreviation": "IND",
+        "city": "Indiana",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Indiana Pacers",
+        "name": "Pacers"
+      },
+      "visitor_team_score": 139
+    },
+    {
+      "id": 858423,
+      "date": "2023-03-19T00:00:00.000Z",
+      "home_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "home_team_score": 118,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 28,
+        "abbreviation": "TOR",
+        "city": "Toronto",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Toronto Raptors",
+        "name": "Raptors"
+      },
+      "visitor_team_score": 111
+    },
+    {
+      "id": 858358,
+      "date": "2023-03-11T00:00:00.000Z",
+      "home_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "home_team_score": 125,
+      "period": 5,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 116
+    },
+    {
+      "id": 858380,
+      "date": "2023-03-13T00:00:00.000Z",
+      "home_team": {
+        "id": 26,
+        "abbreviation": "SAC",
+        "city": "Sacramento",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Sacramento Kings",
+        "name": "Kings"
+      },
+      "home_team_score": 124,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 133
+    },
+    {
+      "id": 858387,
+      "date": "2023-03-14T00:00:00.000Z",
+      "home_team": {
+        "id": 24,
+        "abbreviation": "PHX",
+        "city": "Phoenix",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Phoenix Suns",
+        "name": "Suns"
+      },
+      "home_team_score": 104,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 116
+    },
+    {
+      "id": 858396,
+      "date": "2023-03-16T00:00:00.000Z",
+      "home_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "home_team_score": 123,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 12,
+        "abbreviation": "IND",
+        "city": "Indiana",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Indiana Pacers",
+        "name": "Pacers"
+      },
+      "visitor_team_score": 139
+    },
+    {
+      "id": 858423,
+      "date": "2023-03-19T00:00:00.000Z",
+      "home_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "home_team_score": 118,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 28,
+        "abbreviation": "TOR",
+        "city": "Toronto",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Toronto Raptors",
+        "name": "Raptors"
+      },
+      "visitor_team_score": 111
+    },
+    {
+      "id": 858358,
+      "date": "2023-03-11T00:00:00.000Z",
+      "home_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "home_team_score": 125,
+      "period": 5,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 116
+    },
+    {
+      "id": 858380,
+      "date": "2023-03-13T00:00:00.000Z",
+      "home_team": {
+        "id": 26,
+        "abbreviation": "SAC",
+        "city": "Sacramento",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Sacramento Kings",
+        "name": "Kings"
+      },
+      "home_team_score": 124,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 133
+    },
+    {
+      "id": 858387,
+      "date": "2023-03-14T00:00:00.000Z",
+      "home_team": {
+        "id": 24,
+        "abbreviation": "PHX",
+        "city": "Phoenix",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Phoenix Suns",
+        "name": "Suns"
+      },
+      "home_team_score": 104,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 116
+    },
+    {
+      "id": 858396,
+      "date": "2023-03-16T00:00:00.000Z",
+      "home_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "home_team_score": 123,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 12,
+        "abbreviation": "IND",
+        "city": "Indiana",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Indiana Pacers",
+        "name": "Pacers"
+      },
+      "visitor_team_score": 139
+    },
+    {
+      "id": 858423,
+      "date": "2023-03-19T00:00:00.000Z",
+      "home_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "home_team_score": 118,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 28,
+        "abbreviation": "TOR",
+        "city": "Toronto",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Toronto Raptors",
+        "name": "Raptors"
+      },
+      "visitor_team_score": 111
+    },
+    {
+      "id": 858358,
+      "date": "2023-03-11T00:00:00.000Z",
+      "home_team": {
+        "id": 10,
+        "abbreviation": "GSW",
+        "city": "Golden State",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Golden State Warriors",
+        "name": "Warriors"
+      },
+      "home_team_score": 125,
+      "period": 5,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 116
+    },
+    {
+      "id": 858380,
+      "date": "2023-03-13T00:00:00.000Z",
+      "home_team": {
+        "id": 26,
+        "abbreviation": "SAC",
+        "city": "Sacramento",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Sacramento Kings",
+        "name": "Kings"
+      },
+      "home_team_score": 124,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 133
+    },
+    {
+      "id": 858387,
+      "date": "2023-03-14T00:00:00.000Z",
+      "home_team": {
+        "id": 24,
+        "abbreviation": "PHX",
+        "city": "Phoenix",
+        "conference": "West",
+        "division": "Pacific",
+        "full_name": "Phoenix Suns",
+        "name": "Suns"
+      },
+      "home_team_score": 104,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "visitor_team_score": 116
+    },
+    {
+      "id": 858396,
+      "date": "2023-03-16T00:00:00.000Z",
+      "home_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "home_team_score": 123,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 12,
+        "abbreviation": "IND",
+        "city": "Indiana",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Indiana Pacers",
+        "name": "Pacers"
+      },
+      "visitor_team_score": 139
+    },
+    {
+      "id": 858423,
+      "date": "2023-03-19T00:00:00.000Z",
+      "home_team": {
+        "id": 17,
+        "abbreviation": "MIL",
+        "city": "Milwaukee",
+        "conference": "East",
+        "division": "Central",
+        "full_name": "Milwaukee Bucks",
+        "name": "Bucks"
+      },
+      "home_team_score": 118,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 28,
+        "abbreviation": "TOR",
+        "city": "Toronto",
+        "conference": "East",
+        "division": "Atlantic",
+        "full_name": "Toronto Raptors",
+        "name": "Raptors"
+      },
+      "visitor_team_score": 111
+    }
+  ],
+  "meta": {
+    "total_pages": 1,
+    "current_page": 1,
+    "next_page": null,
+    "per_page": 20,
+    "total_count": 20
+  }
+}

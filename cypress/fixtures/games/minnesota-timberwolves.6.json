@@ -144,13 +144,42 @@
         "name": "Timberwolves"
       },
       "visitor_team_score": 140
+    },
+    {
+      "id": 858377,
+      "date": "2023-03-13T00:00:00.000Z",
+      "home_team": {
+        "id": 1,
+        "abbreviation": "ATL",
+        "city": "Atlanta",
+        "conference": "East",
+        "division": "Southeast",
+        "full_name": "Atlanta Hawks",
+        "name": "Hawks"
+      },
+      "home_team_score": 115,
+      "period": 4,
+      "postseason": false,
+      "season": 2022,
+      "status": "Final",
+      "time": "Final",
+      "visitor_team": {
+        "id": 18,
+        "abbreviation": "MIN",
+        "city": "Minnesota",
+        "conference": "West",
+        "division": "Northwest",
+        "full_name": "Minnesota Timberwolves",
+        "name": "Timberwolves"
+      },
+      "visitor_team_score": 136
     }
   ],
   "meta": {
     "total_pages": 1,
     "current_page": 1,
     "next_page": null,
-    "per_page": 12,
-    "total_count": 5
+    "per_page": 6,
+    "total_count": 6
   }
 }
