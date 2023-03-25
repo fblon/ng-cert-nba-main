@@ -26,7 +26,7 @@ export interface Team {
   readonly division: string;
   readonly full_name: string;
   readonly name: string;
-  readonly numberOfDays: number;
+  numberOfDays: number;
 }
 
 export type ServerTeam = Omit<Team, 'numberOfDays'>;

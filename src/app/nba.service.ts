@@ -87,7 +87,8 @@ export class NbaService {
   }
 
   private nextTrackedTeams(trackedTeams: Team[]) {
-    this.trackedTeams$.next(trackedTeams.map(t => ({...t, numberOfDays: this.numberOfDays})));
+    trackedTeams.forEach(t => t.numberOfDays = this.numberOfDays);
+    this.trackedTeams$.next(trackedTeams);
   }
 
   private getDaysQueryString(nbOfDays: number): string {
