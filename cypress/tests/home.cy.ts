@@ -167,7 +167,7 @@ describe('Home page', () => {
     changeTeam(minnesotaTimberwolves);
   });
 
-  it.only('should keep tracking time align with number of days', () => {
+  it('should keep tracking time align with number of days', () => {
 
     trackTeams(atlantaHawks);
     checkStats(12, atlantaHawks);
