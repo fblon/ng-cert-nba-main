@@ -123,11 +123,15 @@ describe('Home page', () => {
 
     checkTrackedTeams(...allTestTeams);
 
-    deleteTrackedTeams(goldenStateWarriors);
+    deleteTrackedTeams(false, goldenStateWarriors);
+
+    checkTrackedTeams(...allTestTeams);
+
+    deleteTrackedTeams(true, goldenStateWarriors);
 
     checkTrackedTeams(atlantaHawks, brooklynNets, milwaukeeBucks, minnesotaTimberwolves, newOrleansPelicans);
 
-    deleteTrackedTeams(atlantaHawks, brooklynNets, milwaukeeBucks, minnesotaTimberwolves, newOrleansPelicans);
+    deleteTrackedTeams(true, atlantaHawks, brooklynNets, milwaukeeBucks, minnesotaTimberwolves, newOrleansPelicans);
 
     checkNoTrackedTeams();
   });
@@ -218,16 +222,15 @@ describe('Home page', () => {
     cy.wait('@apiGames');
   }
 
-  function deleteTrackedTeams(...teams: Team[]) {
+  function deleteTrackedTeams(confirm: boolean, ...teams: Team[]) {
     teams.forEach(team => {
 
       cy.get(cardTeamNameSelector).contains(team.name).first().within(() => {
         cy.get('span').click();
-
       });
 
       cy.get('dialog:visible').within(() => {
-        cy.get('button').contains('Yes').click();
+        cy.get('button').contains(confirm ? 'Yes': 'No').click();
       });
     });
   }
