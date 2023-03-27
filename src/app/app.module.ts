@@ -9,13 +9,15 @@ import {FormsModule} from '@angular/forms';
 import { GameResultsComponent } from './game-results/game-results.component';
 import { GameStatsComponent } from './game-stats/game-stats.component';
 import { SharedModule } from './shared/shared.module';
+import { ConfirmDeletionDialogComponent } from './team-stats/confirm-deletion-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamStatsComponent,
     GameResultsComponent,
-    GameStatsComponent
+    GameStatsComponent,
+    ConfirmDeletionDialogComponent
   ],
   imports: [
     BrowserModule,

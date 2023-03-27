@@ -1,0 +1,12 @@
+div {
+  color: #777
+}
+
+button {
+  font-weight: bolder;
+}
+
+button:not(:last-of-type) {
+  background-color: transparent;
+}
+

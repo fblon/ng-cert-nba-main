@@ -1,8 +1,6 @@
-<app-modal-dialog 
-  [buttons]="deleteChoices" 
-  (clickEvent)="confirmRemove($event)">
-  <div>Are you sure you want to remove this team?</div>
-</app-modal-dialog>
+<app-confirm-deletion-dialog (remove)="confirmRemove($event)">
+
+</app-confirm-deletion-dialog>
 
 <div class="card" *ngIf="games$ | async as games">
   <div>

@@ -2,9 +2,7 @@ import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Observable, tap} from 'rxjs';
 import {NbaService} from '../nba.service';
 import {Game, Stats, Team} from '../data.models';
-import { ModalDialogComponent } from '../shared/modal-dialog/modal-dialog.component';
-
-type DeleteChoice = 'Yes' | 'No';
+import { ConfirmDeletionDialogComponent } from './confirm-deletion-dialog.component';
 
 @Component({
   selector: 'app-team-stats',
@@ -14,12 +12,10 @@ type DeleteChoice = 'Yes' | 'No';
 export class TeamStatsComponent implements OnInit {
 
   @Input() team!: Team;
-  @ViewChild(ModalDialogComponent) dialog!: ModalDialogComponent;
+  @ViewChild(ConfirmDeletionDialogComponent) dialog!: ConfirmDeletionDialogComponent;
 
   games$!: Observable<Game[]>;
   stats!: Stats;
-
-  deleteChoices: DeleteChoice[] = [ 'No', 'Yes' ];
 
   constructor(protected nbaService: NbaService) { }
 
@@ -33,10 +29,9 @@ export class TeamStatsComponent implements OnInit {
     this.dialog.show();
   }
 
-  confirmRemove(choice: string) {
-    if (choice as DeleteChoice === 'Yes') {
+  confirmRemove(choice: boolean) {
+    if (choice) {
       this.nbaService.removeTrackedTeam(this.team);
     }
   }
-
 }
